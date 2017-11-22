@@ -1,10 +1,10 @@
 <?php
     $my_host = "127.0.0.1"; // Your mySQL server host address
-    $mydb    = "neolant";   // The name of the database to use
-    $my_user = "neolant";   // Your mySQL username
-    $my_pass = "neolant";   // Your mySQL password
+    $mydb    = "badra";   // The name of the database to use
+    $my_user = "badra";   // Your mySQL username
+    $my_pass = "fahBu2suinah";   // Your mySQL password
 
-    $link = mysqli_connect($my_host, $my_user , "neolant", $mydb);
+    $link = mysqli_connect($my_host, $my_user , $my_pass, $mydb);
 
     if (!$link) {
         echo "Ошибка: Невозможно установить соединение с MySQL." . PHP_EOL;
@@ -44,8 +44,6 @@
     $postpass   = anti_injection_login($_POST["myform_pass"]);
     $postuserid = anti_injection_login($_POST["myform_postuserid"]);
     
-    echo "myform_hash: ".$unityHash.", phpHash: ".$phpHash.", myform_pass: ".$postpass.", myform_postuserid: ".$postuserid . PHP_EOL;
-
     if ((!$postuserid || !$postpass) || ($unityHash != $phpHash))
     {
         echo "Sorry, wrong pass" . PHP_EOL;
